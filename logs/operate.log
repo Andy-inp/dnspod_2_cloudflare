@@ -1,0 +1,26 @@
+2019-06-02 06:30:17 - mylogger - INFO - 域名testccc.com添加主机头www到记录testccc.cname.com.成功
+2019-06-02 06:30:18 - mylogger - INFO - 域名testccc.com添加主机头*到记录testccc.cname.com.成功
+2019-06-02 06:30:19 - mylogger - INFO - 域名testccc.com添加主机头test到记录8.8.8.8成功
+2019-06-02 06:30:20 - mylogger - INFO - 域名testeee.com添加主机头test到记录8.8.8.8成功
+2019-06-02 06:30:21 - mylogger - INFO - 域名testeee.com添加主机头www到记录testeee.cname.com.成功
+2019-06-02 06:30:22 - mylogger - INFO - 域名testeee.com添加主机头*到记录testeee.cname.com.成功
+2019-06-02 06:30:47 - mylogger - INFO - 域名testccc.com添加主机头www到记录testccc.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 06:30:48 - mylogger - INFO - 域名testccc.com添加主机头*到记录testccc.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 06:30:49 - mylogger - INFO - 域名testccc.com添加主机头test到记录8.8.8.8，失败错误代码：81057，失败原因：The record already exists.
+2019-06-02 06:30:50 - mylogger - INFO - 域名testeee.com添加主机头test到记录8.8.8.8，失败错误代码：81057，失败原因：The record already exists.
+2019-06-02 06:30:51 - mylogger - INFO - 域名testeee.com添加主机头www到记录testeee.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 06:30:52 - mylogger - INFO - 域名testeee.com添加主机头*到记录testeee.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 06:31:45 - mylogger - INFO - 域名testccc.com添加到 <CloudFlare> 成功
+2019-06-02 06:31:52 - mylogger - INFO - 域名testeee.com添加到 <CloudFlare> 成功
+2019-06-02 06:31:54 - mylogger - INFO - 域名testccc.com添加主机头www到记录testccc.cname.com.成功
+2019-06-02 06:31:55 - mylogger - INFO - 域名testccc.com添加主机头*到记录testccc.cname.com.成功
+2019-06-02 06:31:56 - mylogger - INFO - 域名testccc.com添加主机头test到记录8.8.8.8成功
+2019-06-02 06:31:57 - mylogger - INFO - 域名testeee.com添加主机头test到记录8.8.8.8成功
+2019-06-02 06:31:58 - mylogger - INFO - 域名testeee.com添加主机头www到记录testeee.cname.com.成功
+2019-06-02 06:31:59 - mylogger - INFO - 域名testeee.com添加主机头*到记录testeee.cname.com.成功
+2019-06-02 07:17:39 - mylogger - INFO - 域名testccc.com添加主机头www到记录testccc.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 07:17:40 - mylogger - INFO - 域名testccc.com添加主机头*到记录testccc.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 07:17:41 - mylogger - INFO - 域名testccc.com添加主机头test到记录8.8.8.8，失败错误代码：81057，失败原因：The record already exists.
+2019-06-02 07:17:42 - mylogger - INFO - 域名testeee.com添加主机头test到记录8.8.8.8，失败错误代码：81057，失败原因：The record already exists.
+2019-06-02 07:17:43 - mylogger - INFO - 域名testeee.com添加主机头www到记录testeee.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.
+2019-06-02 07:17:44 - mylogger - INFO - 域名testeee.com添加主机头*到记录testeee.cname.com.，失败错误代码：81053，失败原因：An A, AAAA or CNAME record already exists with that host.

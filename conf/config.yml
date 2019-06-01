@@ -1,0 +1,14 @@
+mysql:
+  user: xxx
+  password: xxx
+  ip: 1.1.1.1
+  port: 3306
+  db: xxx
+
+dnspod_api:
+  d_token: xxx
+
+cloudflare_api:
+  c_email: xxx@xx.com
+  c_token: xxx
+
