@@ -5,10 +5,16 @@ mysql:
   port: 3306
   db: xxx
 
+redis:
+  host: 192.168.139.130
+  port: 6379
+  password: 123
+  list1: dnspod_record_result
+
 dnspod_api:
   d_token: xxx
 
 cloudflare_api:
-  c_email: xxx@xx.com
+  c_email: xxx
   c_token: xxx
 
