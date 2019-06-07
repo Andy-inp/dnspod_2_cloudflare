@@ -34,26 +34,26 @@ class MyThread(threading.Thread):
 def main():
     '''主程序：添加域名、从dnspod导出所有record添加入CloudFlare'''
     # 1、添加域名
-    # console_logger.info(f"\033[35m#####开始添加域名#####\033[0m")
-    # for d in domains:
-    #     domain_thread = MyThread(Cloudfare_Domain_Instance.add_domain, args=(d,))
-    #     thread_list.append(domain_thread)
-    #     domain_thread.start()
-    # for t in thread_list:
-    #     t.join()
-    #     return_data = t.get_result()
-    #
-    #     if return_data['status']:
-    #         console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加到 <CloudFlare> 成功 \033[0m")
-    #         mylogger.info(f"域名{return_data['data']['domain']}添加到 <CloudFlare> 成功")
-    #     else:
-    #         if return_data['data']['code'] == 1061:
-    #             console_logger.info(f"\033[33m域名{return_data['data']['domain']}已在 <CloudFlare> 存在，忽略此次添加\033[0m")
-    #         else:
-    #             console_logger.error(f"\033[31m域名{return_data['data']['domain']}添加失败，请检查日志...\033[0m")
-    #             mylogger.error(f"域名{return_data['data']['domain']}添加到 <CloudFlare> 失败，错误代码：{return_data['data']['code']}，失败原因：{return_data['data']['message']}")
-    # console_logger.info(f"\033[35m#####域名添加结束#####\033[0m")
-    # thread_list.clear()
+    console_logger.info(f"\033[35m#####开始添加域名#####\033[0m")
+    for d in domains:
+        domain_thread = MyThread(Cloudfare_Domain_Instance.add_domain, args=(d,))
+        thread_list.append(domain_thread)
+        domain_thread.start()
+    for t in thread_list:
+        t.join()
+        return_data = t.get_result()
+    
+        if return_data['status']:
+            console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加到 <CloudFlare> 成功 \033[0m")
+            mylogger.info(f"域名{return_data['data']['domain']}添加到 <CloudFlare> 成功")
+        else:
+            if return_data['data']['code'] == 1061:
+                console_logger.info(f"\033[33m域名{return_data['data']['domain']}已在 <CloudFlare> 存在，忽略此次添加\033[0m")
+            else:
+                console_logger.error(f"\033[31m域名{return_data['data']['domain']}添加失败，请检查日志...\033[0m")
+                mylogger.error(f"域名{return_data['data']['domain']}添加到 <CloudFlare> 失败，错误代码：{return_data['data']['code']}，失败原因：{return_data['data']['message']}")
+    console_logger.info(f"\033[35m#####域名添加结束#####\033[0m")
+    thread_list.clear()
 
 
     # 2、获取dnspod所有record去除NS记录，将记录列表写入redis

@@ -1,0 +1,6 @@
+2019-06-03 05:30:34 - mylogger - INFO - 域名testeee.com添加主机头*到记录testeee.cname.com.成功
+2019-06-03 05:30:35 - mylogger - INFO - 域名testeee.com添加主机头www到记录testeee.cname.com.成功
+2019-06-03 05:30:36 - mylogger - INFO - 域名testeee.com添加主机头test到记录8.8.8.8成功
+2019-06-03 05:30:37 - mylogger - INFO - 域名testccc.com添加主机头test到记录8.8.8.8成功
+2019-06-03 05:30:38 - mylogger - INFO - 域名testccc.com添加主机头*到记录testccc.cname.com.成功
+2019-06-03 05:30:39 - mylogger - INFO - 域名testccc.com添加主机头www到记录testccc.cname.com.成功
