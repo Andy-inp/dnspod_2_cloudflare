@@ -34,7 +34,7 @@ class MyThread(threading.Thread):
 def main():
     '''主程序：添加域名、从dnspod导出所有record添加入CloudFlare'''
     # 1、添加域名
-    console_logger.info(f"\033[35m#####开始添加域名#####\033[0m")
+    console_logger.info(f"\033[35m#####开始添加域名，输出添加失败域名#####\033[0m")
     for d in domains:
         domain_thread = MyThread(Cloudfare_Domain_Instance.add_domain, args=(d,))
         thread_list.append(domain_thread)
@@ -44,7 +44,7 @@ def main():
         return_data = t.get_result()
     
         if return_data['status']:
-            console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加到 <CloudFlare> 成功 \033[0m")
+            #console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加到 <CloudFlare> 成功 \033[0m")
             mylogger.info(f"域名{return_data['data']['domain']}添加到 <CloudFlare> 成功")
         else:
             if return_data['data']['code'] == 1061:
@@ -57,7 +57,7 @@ def main():
 
 
     # 2、获取dnspod所有record去除NS记录，将记录列表写入redis
-    console_logger.info(f"\033[35m#####开始添加记录#####\033[0m")
+    console_logger.info(f"\033[35m#####开始添加记录，输出添加失败的记录#####\033[0m")
     # 从dnspod获取record记录
     for d in domains:
         get_record_thread = MyThread(Dnspod_Record_Instance.get_record_list, args=(d,))
@@ -85,7 +85,7 @@ def main():
         return_data = Cloudfare_Record_Instance.add_record(**new_record)
 
         if return_data['status']:
-            console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加主机头{return_data['data']['sub']}到记录{return_data['data']['value']}成功 \033[0m")
+            #console_logger.info(f"\033[32m域名{return_data['data']['domain']}添加主机头{return_data['data']['sub']}到记录{return_data['data']['value']}成功 \033[0m")
             mylogger.info(f"域名{return_data['data']['domain']}添加主机头{return_data['data']['sub']}到记录{return_data['data']['value']}成功")
         else:
             console_logger.info(f"\033[31m域名{return_data['data']['domain']}添加主机头{return_data['data']['sub']}到记录{return_data['data']['value']}失败，请检查日志... \033[0m")

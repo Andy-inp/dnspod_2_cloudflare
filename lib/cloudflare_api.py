@@ -94,11 +94,14 @@ class Cloudflare_Api_ZoneRecord(Plublic_parameter):
 
     @staticmethod
     def get_zone_id(domain, url, headers):
-        get_url = f"{url}?name={domain}"
-        r = requests.get(url=get_url, headers=headers)
-        result_json = r.json()
+        try:
+            get_url = f"{url}?name={domain}"
+            r = requests.get(url=get_url, headers=headers)
+            result_json = r.json()
 
-        return result_json['result'][0]['id']
+            return result_json['result'][0]['id']
+        except:
+            return None
 
 
     def add_record(self, domain, type, sub, content, ttl=1, priprity=None, proxied=None):

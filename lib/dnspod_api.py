@@ -17,7 +17,7 @@ class Public_parameter(object):
         self.Get_Domain_List_URL = 'https://dnsapi.cn/Domain.List'          # 获取域名列表
         self.Set_Domain_Status_URL = 'https://dnsapi.cn/Domain.Status'      # 设置域名状态
         self.Add_Record_URL = 'https://dnsapi.cn/Record.Create'             # 添加记录
-        self.Get_Record_URL = 'https://dnsapi.cn/Record.List'               # 获取记录列表
+        self.Get_Record_List_URL = 'https://dnsapi.cn/Record.List'               # 获取记录列表
         self.Modify_Record_URL = 'https://dnsapi.cn/Record.Modify'          # 修改记录
         self.Remove_Record_URL = 'https://dnsapi.cn/Record.Remove'          # 删除记录
 
@@ -156,7 +156,7 @@ class Dnspod_Api_Record(Public_parameter):
             result_json = r.json()
         except Exception as e:
             return_data['status'] = 'Error'
-            return_data['message'] = f"{self.Get_Domain_List_URL} 连接失败: {e.__str__()}"
+            return_data['message'] = f"{self.Add_Record_URL} 连接失败: {e.__str__()}"
             return return_data
         else:
             return_data['status'] = 'success' if result_json['status']['code'] == '1' else 'fail'
@@ -199,7 +199,7 @@ class Dnspod_Api_Record(Public_parameter):
             result_json = r.json()
         except Exception as e:
             return_data['status'] = 'Error'
-            return_data['message'] = f"{self.Get_Domain_List_URL} 连接失败: {e.__str__()}"
+            return_data['message'] = f"{self.Modify_Record_URL} 连接失败: {e.__str__()}"
             return return_data
         else:
             return_data['status'] = 'success' if result_json['status']['code'] == '1' else 'fail'
@@ -230,7 +230,7 @@ class Dnspod_Api_Record(Public_parameter):
             result_json = r.json()
         except Exception as e:
             return_data['status'] = 'Error'
-            return_data['message'] = f"{self.Get_Domain_List_URL} 连接失败: {e.__str__()}"
+            return_data['message'] = f"{self.Remove_Record_URL} 连接失败: {e.__str__()}"
             return return_data
         else:
             return_data['status'] = 'success' if result_json['status']['code'] == '1' else 'fail'
@@ -249,11 +249,11 @@ class Dnspod_Api_Record(Public_parameter):
         self.data['length'] = length
 
         try:
-            r = requests.post(url=self.Get_Record_URL, data=self.data)
+            r = requests.post(url=self.Get_Record_List_URL, data=self.data)
             result_json = r.json()
         except Exception as e:
             return_data['status'] = 'Error'
-            return_data['message'] = f"{self.Get_Domain_List_URL} 连接失败: {e.__str__()}"
+            return_data['message'] = f"{self.Get_Record_List_URL} 连接失败: {e.__str__()}"
             return_data['domain'] = domain
             return return_data
         else:
